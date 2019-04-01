@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Lista de Contatos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+
+            <p:messages style="color: blue; border-color: red;">
+                <b:container fluid="true">
+
+                    <b:panel collapsible="true">
+
+                        <b:jumbotron>
+
+                            <b:navBar brand="Menu" brandHref="#" fluid="fluid" inverse="true">
+
+
+                                <b:navbarLinks>
+                                    <b:navLink icon-awesome="home" href="index.xhtml" value="Home"/>
+                                    <b:navLink  href="add.xhtml" value="Add Contact"/>
+                                    <b:navLink icon-awesome="group" href="#" value="Remove Contact"/>
+                                    <b:navLink icon-awesome="group" href="lista.xhtmnl" value="List Contacts"/>
+                                    <b:navLink icon-awesome="group" href="#" value="Update Contacts"/>
+
+                                </b:navbarLinks>
+                            </b:navBar>
+                        </b:jumbotron>
+                    </b:panel>
+                </b:container>
+            </p:messages>
+        </h:form>
+
+        <br/>
+        
+            <b:dataTable var="c" value="#{contatoMB.listar()}">
+                <b:column>
+                    <p:outputLabel value="#{c.id}"/>
+                </b:column>
+                <b:column>
+                    <p:outputLabel value="#{c.nome}"/>
+                </b:column>
+                <b:column>
+                    <p:outputLabel value="#{c.telefone}"/>
+                </b:column>
+            </b:dataTable>
+
+
+       
+
+    </h:body>
+</html>
